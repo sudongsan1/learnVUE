@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <button @click="btn1click">按钮</button>
+    <button @click="btn1click()">按钮</button>
+    {{message}}
+    <br>
+    <input type="text" v-model="message">
+    <br>
+    <input type="radio" id="famale" name="sex">女
+    <input type="radio" id="male1" name="sex">男
+    <br>
+    <br>
+
+<!--    <form>-->
+<!--        <label for="male">Male</label>-->
+<!--        <input type="radio" name="sex" id="male"/>-->
+<!--        <br/>-->
+<!--        <label for="female">Female</label>-->
+<!--        <input type="radio" name="sex" id="female"/>-->
+<!--        <br/>-->
+
+<!--        -->
+<!--    </form>-->
+    <button @click="btnclick1">-</button>
+    磁盘大小<input type="text" :value="size"/>
+    <button @click="btnclick2">+</button>
+    <h2>asdfsd</h2>
+
+</div>
+
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "heiheihei",
+            size: 20
+        },
+        methods: {
+            btn1click(abc) {
+
+            },
+            btnclick1() {
+                if (this.size>20) this.size=this.size-20;
+                else this.size = 20;
+            },
+            btnclick2() {
+                if (this.size<80) this.size=this.size+20;
+                else this.size = 80;
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
